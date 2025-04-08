@@ -124,8 +124,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+####################################################################################################
 # Configuraciones de acceso al bucket:
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(BASE_DIR) + "/jjdc-453414-7962ee87f1a0.json"
+#! No guarde las credenciales dentro del proyecto
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/juanf/jjdc-453414-7962ee87f1a0.json"
 
 GCS_BUCKET_NAME = "examenes-eeg"  # Reemplaza con el nombre real de tu bucket
 GCS_BASE_FOLDER = "uploads/"  # Opcional: carpeta base en el bucket para tus archivos

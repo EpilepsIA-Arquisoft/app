@@ -1,1 +1,3 @@
-django djangorestframework
+django
+djangorestframework
+google-cloud-storage

@@ -6,8 +6,8 @@ import uuid
 
 from google.cloud import storage
 
-from main import settings
-import gcs
+from app import settings
+from main import gcs
 
 class Usuario(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -67,6 +67,8 @@ class Examen(models.Model):
             # Actualiza el campo urlAcceso y guarda de nuevo el objeto
             self.urlAcceso = public_url
             super().save(update_fields=["urlAcceso"])
+            if os.path.exists(local_path):
+                    os.remove(local_path)
 
 class Resultado(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
